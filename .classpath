@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ae3.api"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ae3.sdk"/>
+	<!-- INCOMPLETE: source also imports com.lowagie.text.* (an iText-family PDF library).
+	     No bundled jar or lib/ folder was found in this repo, and no other project.inf/.classpath
+	     in this workspace shows how an external (non-AE3) jar dependency is declared here - not
+	     guessing at a path. See this unit's CLAUDE.md. -->
+	<classpathentry kind="output" path="bin"/>
+</classpath>
