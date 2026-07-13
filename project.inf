@@ -2,6 +2,7 @@ Name: ae3.sys.pkg.l2.tgt.pdf
 Info: AE3 L2 Media Target: PDF
 Requires: \
 	ae3.sdk \
+	ae3.web \
 
 Provides: \
 	ae3.sys.l2.tgt.pdf \
