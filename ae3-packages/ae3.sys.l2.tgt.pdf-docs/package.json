@@ -1,0 +1,6 @@
+{
+	"type" : "commonjs",
+	"name" : "ae3.sys.l2.tgt.pdf-docs",
+	"description" : "AE3 L2 Media Target: PDF, Documentation",
+	"requires" : [ "ae3.web", "ae3.manual" ]
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project ae3.sys.l2.tgt.pdf with Jar-in-Jar Loader">
+	<!--this file was created by Eclipse Runnable JAR Export Wizard-->
+	<!--ANT 1.7 is required                                        -->
+	<target name="create_run_jar">
+		<jar destfile="../ae3/distribution/ae3/java/ru.myx.ae3sys.l2.tgt.pdf-5.0.jar">
+			<manifest>
+				<attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader" />
+				<attribute name="Rsrc-Main-Class" value="ru.myx.ae3.l2.pdf.test.TestPdf" />
+				<attribute name="Class-Path" value="." />
+				<attribute name="Rsrc-Class-Path" value="./ iText-2.1.7.jar bcprov-jdk16-143.jar" />
+			</manifest>
+			<zipfileset src="jar-in-jar-loader.zip" />
+			<fileset dir="../ae3.sys.l2.tgt.pdf/bin" />
+			<fileset dir="../ae3.sdk.l2/bin" />
+			<fileset dir="../ae3.sys/bin" />
+			<fileset dir="../ae3.sdk/bin" />
+			<fileset dir="../ae3.api/bin" />
+			<zipfileset dir="../ae3-in/iText-2.1.7" includes="iText-2.1.7.jar" />
+			<zipfileset dir="../ae3-in/bouncycastle-1.43" includes="bcprov-jdk16-143.jar" />
+		</jar>
+	</target>
+</project>

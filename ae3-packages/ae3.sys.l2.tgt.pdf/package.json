@@ -1,0 +1,6 @@
+{
+	"type" : "commonjs",
+	"name" : "ae3.sys.l2.tgt.pdf",
+	"description" : "AE3 L2 Media Target: PDF",
+	"requires" : "ae3.base"
+}
