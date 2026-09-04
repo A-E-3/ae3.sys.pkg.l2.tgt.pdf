@@ -20,7 +20,7 @@ AE3 L2 media target for PDF output, built directly on the old iText fork (`com.l
 
 ## Gotchas
 
-- **`resources/lib/ae3/pdf.js`'s `makeDataTableReply(query, layout)` referenced an undefined `name`** — fixed this session by adding `const name = layout.name || 'data';` before the `name + ".pdf"` reply-filename concatenation. Kept as plain string concatenation, matching this file's existing style (not a template literal).
+- **`resources/lib/ae3/pdf.js`'s `makeDataTableReply(query, layout)` referenced an undefined `name`** — fixed by adding `const name = layout.name || 'data';` before the `name + ".pdf"` reply-filename concatenation. Kept as plain string concatenation, matching this file's existing style (not a template literal).
 - **`.gitignore`'s `*.jar` rule may be wrong for this unit specifically** — inherited unchanged from the `l2.tgt.xml` template, which has no jar dependencies of its own. If iText ever gets vendored into this repo (e.g. a `lib/` folder), a blanket `*.jar` ignore would silently exclude it from git. Left as-is since it's unknown whether jars are meant to be vendored here vs. resolved externally.
 - 26 compiled `.class` files are checked into git under `bin/` — not yet cleaned up.
 - See `ae3.sys.pkg.l2.tgt.html`'s CLAUDE.md for why `l2.tgt.xml`'s three-entry `Provides:` shape isn't treated as a confirmed convention here.
