@@ -1,7 +1,0 @@
-{
-	layout : "intl",
-	value : {
-		en : "Русский. This is PDF renderer. iText (and BouncyCastle for encryption).",
-		ru : "Это PDF рендерер, он использует iText (и BouncyCastle для шифрования)."
-	}
-}
