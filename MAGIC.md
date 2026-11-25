@@ -22,3 +22,13 @@ why the document still reports zero pages once that table is added was not pinne
 real, previously-unexercised interaction (no live test of a top-level `"grid"` layout through this
 code path existed before this pass), not confirmed as one specific one-line bug. Not fixed this
 pass — a stop-and-check-back item, not touched.
+
+## pdf.js exports makeDataViewReply and the data-view reduction, measured 2026-11-25
+
+`ae3-packages/ae3.sys.l2.tgt.pdf/resources/lib/ae3/pdf.js` now carries `reduceDataViewGridPdf` and `makeDataViewReply(query, layout)`, exported beside `makeDataTableReply` inside the existing `Object.create(PdfAPI, ...)` block.
+
+- The reduction reads `layout.options` as well as `layout.fields` and `layout.values`.
+- A `link`-variant field becomes a real `{ layout : "link", href, title }` node, which `PdfLayoutLink` renders as a clickable link.
+- `makeDataViewReply` returns `createBinaryFromLayout`'s own reply and does not build a second one. That function creates its own `SimpleServeRequest` and `PdfTargetReplyContext`, so the `query` argument is part of the member's contract and is not read here. The reply's file name comes from that request's `/document.pdf`.
+
+The movement is `magic-coordinator`'s Option B ruling of 2026-11-25 13:20 +0200 on `task-20261124T1826Z-build-per-module-dataviewreply`. The text came from the xml skin's `ReduceDataViewGridPdfFn.js`, which the same change removed.
